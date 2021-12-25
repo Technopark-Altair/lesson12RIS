@@ -1,0 +1,15 @@
+<mat-card *ngFor="let person of people">
+  <mat-card-title-group>
+    <mat-card-title>{{ person.name }}</mat-card-title>
+    <mat-card-subtitle>{{ person.challengeName }}</mat-card-subtitle>
+  </mat-card-title-group>
+  <mat-card-content>
+    <p *ngIf="person.isWinner; else showPlace">Победитель</p>
+    <ng-template #showPlace>Место {{ person.place }}</ng-template>
+  </mat-card-content>
+  <mat-card-actions>
+    <a [routerLink]="['/person', person.id]"
+      ><button mat-button>Подробнее</button></a
+    >
+  </mat-card-actions>
+</mat-card>

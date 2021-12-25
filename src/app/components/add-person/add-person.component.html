@@ -1,0 +1,47 @@
+<form [formGroup]="form" (ngSubmit)="submit()" class="addForm">
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input matInput placeholder="Name" formControlName="name" required />
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Surname</mat-label>
+    <input matInput placeholder="Surname" formControlName="surname" required />
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>challengeName</mat-label>
+    <input
+      matInput
+      placeholder="challenge name"
+      formControlName="challengeName"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>place</mat-label>
+    <input
+      type="number"
+      matInput
+      placeholder="place"
+      formControlName="place"
+      required
+    />
+  </mat-form-field>
+  <p>
+    <label>
+      isWinner
+      <input
+        type="checkbox"
+        placeholder="isWinner"
+        formControlName="isWinner"
+      />
+    </label>
+  </p>
+  <button
+    type="submit"
+    [disabled]="form.invalid"
+    mat-raised-button
+    color="primary"
+  >
+    Submit
+  </button>
+</form>

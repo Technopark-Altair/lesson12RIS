@@ -1,0 +1,12 @@
+<div *ngIf="person">
+  <mat-card>
+    <mat-card-title-group>
+      <mat-card-title>{{ person.name }} {{ person.surname }}</mat-card-title>
+      <mat-card-subtitle>{{ person.challengeName }}</mat-card-subtitle>
+    </mat-card-title-group>
+    <mat-card-content>
+      <p *ngIf="person.isWinner">Победитель</p>
+      <p>Место {{ person.place }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>
