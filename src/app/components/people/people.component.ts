@@ -1,4 +1,5 @@
-import { IPerson } from './../../interfaces/person.model';
+import { IPerson } from 'src/app/interfaces/person.model';
+import { Observable } from 'rxjs';
 import { PersonService } from './../../services/person.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,10 +9,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./people.component.scss'],
 })
 export class PeopleComponent implements OnInit {
-  people: IPerson[];
+  people: Observable<IPerson[]>;
   constructor(private personService: PersonService) {
-    this.people = this.personService.getPeople();
+    this.people = this.personService.getPeopleObs();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.personService.updatePeople();
+  }
 }

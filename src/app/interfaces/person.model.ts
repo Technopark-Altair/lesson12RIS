@@ -1,5 +1,5 @@
 export interface IPerson {
-  id: number | null;
+  id: string | null;
   name: string;
   surname: string;
   challengeName: string;

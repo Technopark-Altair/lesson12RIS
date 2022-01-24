@@ -9,15 +9,14 @@ import { PersonService } from 'src/app/services/person.service';
   styleUrls: ['./person.component.scss'],
 })
 export class PersonComponent implements OnInit {
-  id: number | undefined;
+  id: string | undefined;
   person: IPerson | undefined;
   constructor(
     private personService: PersonService,
     private route: ActivatedRoute
   ) {
     this.route.params.subscribe((params) => {
-      this.id = +params['id'];
-      console.log('id', this.id);
+      this.id = params['id'];
     });
   }
 

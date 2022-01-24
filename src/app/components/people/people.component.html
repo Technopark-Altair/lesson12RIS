@@ -1,4 +1,4 @@
-<mat-card *ngFor="let person of people">
+<mat-card *ngFor="let person of people | async">
   <mat-card-title-group>
     <mat-card-title>{{ person.name }}</mat-card-title>
     <mat-card-subtitle>{{ person.challengeName }}</mat-card-subtitle>
