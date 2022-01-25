@@ -2,4 +2,4 @@
 echo "export const environment = {
   production: true,
   fbDbUrl: '$1',
-};" > "src/environments/environment.ts"
+};" > "src/environments/environment.prod.ts"
