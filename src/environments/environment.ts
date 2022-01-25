@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  fbDbUrl: process.env.FIREBASE_DB_URL || 'your_link',
 };
 
 /*
