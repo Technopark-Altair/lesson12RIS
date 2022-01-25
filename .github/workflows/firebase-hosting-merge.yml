@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Setup environments
-        run: /bin/bash chmod +x build.sh & /bin/bash build.sh ${{ secrets.FIREBASE_DB_URL }}
       - run: npm ci && npm run build
+        env:
+          fbDbUrl: ${{ secrets.FIREBASE_DB_URL }}
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
