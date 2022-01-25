@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Setup environments
-        run: chmod +x build.sh & build.sh ${{ secrets.FIREBASE_DB_URL }}
+        run: /bin/bash chmod +x build.sh & /bin/bash build.sh ${{ secrets.FIREBASE_DB_URL }}
       - run: npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
